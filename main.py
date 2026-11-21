@@ -313,11 +313,19 @@ def forecast_trend(reads, index, trophy, t_last, t_target, n_target):
         beta = w_fit * beta_fit + (1.0 - w_fit) * slope_prior
         resid = min(resid, 0.8)
     elif n_pts == 2:
-        beta_fit = (math.log(points[1][1] + 0.5)
-                    - math.log(points[0][1] + 0.5)) / (
-                        math.log(points[1][0]) - math.log(points[0][0]))
-        beta_fit = min(3.0, max(0.0, beta_fit))
-        beta = 0.5 * beta_fit + 0.5 * slope_prior
+        # Two-point slope from the log-time gap between the two distinct
+        # states.  The gap is positive for distinct clock slots, but two
+        # states stamped at the same time (e.g. a recorder overlap) would
+        # divide by zero and crash the run into an invalid case, so a
+        # non-positive gap falls back to the class prior slope instead.
+        dt_log = (math.log(points[1][0]) - math.log(points[0][0]))
+        if dt_log <= 0:
+            beta = slope_prior
+        else:
+            beta_fit = (math.log(points[1][1] + 0.5)
+                        - math.log(points[0][1] + 0.5)) / dt_log
+            beta_fit = min(3.0, max(0.0, beta_fit))
+            beta = 0.5 * beta_fit + 0.5 * slope_prior
         resid = 0.0
     else:
         beta = slope_prior

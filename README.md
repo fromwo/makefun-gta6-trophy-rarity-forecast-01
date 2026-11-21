@@ -1,7 +1,8 @@
 # GTA VI Trophy Rarity Forecast — make.fun entry
 
-[![make.fun · gta6-trophy-rarity-forecast-01](https://make.fun/badge/gta6-trophy-rarity-forecast-01.svg)](https://make.fun/bounty/gta6-trophy-rarity-forecast-01)
-[![rank](https://make.fun/badge/gta6-trophy-rarity-forecast-01/fromwo/makefun-gta6-trophy-rarity-forecast-01/rank.svg)](https://make.fun/bounty/gta6-trophy-rarity-forecast-01/leaderboard)
+[![make.fun](https://make.fun/badge/gta6-trophy-rarity-forecast-01.svg)](https://make.fun/c/gta6-trophy-rarity-forecast-01/)
+[![rank](https://make.fun/badge/gta6-trophy-rarity-forecast-01/fromwo/makefun-gta6-trophy-rarity-forecast-01/rank.svg)](https://make.fun/c/gta6-trophy-rarity-forecast-01/)
+[![reward](https://make.fun/badge/gta6-trophy-rarity-forecast-01/fromwo/makefun-gta6-trophy-rarity-forecast-01/reward.svg)](https://make.fun/c/gta6-trophy-rarity-forecast-01/)
 
 A forecaster for the make.fun competition
 **gta6-trophy-rarity-forecast-01**: given the house's recorded reads of
