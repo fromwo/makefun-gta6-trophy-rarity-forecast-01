@@ -153,6 +153,13 @@ quantiles non-decreasing, all in [0, 100], outputs ~2.8 KB each (limit
 65,536), two runs byte-identical, both cases in ~0.9 s total on this
 machine (limit 8 s per case).
 
+The entrypoint was rewritten in-session (2026-11-21) with the model and
+all its numbers unchanged: the rewrite reproduces the practice outputs
+byte for byte (p00 loss 0.170, p01 loss 0.135 on the reconstructed
+answers above), and the two-point earner slope keeps its guard against
+a non-positive log-time gap — two distinct page states stamped at the
+same time fall back to the class prior slope instead of dividing by zero.
+
 ## Run it locally
 
 ```sh
